@@ -1,0 +1,26 @@
+doctype html
+include mixins/index
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        meta(name='viewport', content='width=device-width')
+        block meta
+            title= meta.title
+        block css
+            link(rel='stylesheet', href='./styles/index.css')
+    body
+        header.b-header
+            div.b-header__logo
+            div.b-header__search
+                input.b-header__search-input(
+                    type='text'
+                    size=70
+                    placeholder="Введите запрос"
+                )
+            div.b-header__addVid
+            div.b-header__enter
+        block content
+        block popup
+        block js
+            script(async, src='./scripts/vendor.js')
+            script(async, src='./scripts/index.js')
