@@ -4,6 +4,7 @@ html(lang='en')
     head
         meta(charset='UTF-8')
         meta(name='viewport', content='width=device-width')
+        link(href='//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css', rel="stylesheet")
         block meta
             title= meta.title
         block css
@@ -19,9 +20,20 @@ html(lang='en')
                 )
                 button.b-header__search-button(type="submit") i
             div.b-header__addVid
+                i.fa.fa-upload
             div.b-header__enter
-        block content
-        block popup
+                button.b-header__enter-button(type="submit") Войти
+        section.b_main
+            div.b-main__layout
+                div.b-main__player
+                    img(src='/images/player.jpg')
+                div.b-main__playList
+                    +playlist('/images/video.jpg', '2016 Thailand WFSC Senior Men Classic Slalom 1st, Sergey Timchenko', 'Kamol Yawichai', '1 455 просмотров')
+                    hr.b-main__item.divider
+                    +playlist('/images/video2.jpg', 'ОБЕД БОМЖА на 1$ в Китае!!', 'Живу в Китае', 'рекомендуемые вам')
+                    +playlist('/images/video3.jpg', '2016 Thailand WFSC Junior Women Classic 1st Sofia Bogdanova.', 'RollingK Media', 'рекомендуемые вам')
+                    +playlist('/images/video4.jpg', 'In Flames - When The World Explodes (ft. Emilia Feldt)', 'C. Rique', 'рекомендуемые вам')
+
         block js
             script(async, src='./scripts/vendor.js')
             script(async, src='./scripts/index.js')

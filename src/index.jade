@@ -1,5 +1,24 @@
 extends templates/layout
 
 block content
-	h1 Template
-	img(src="/images/loading-spin-balck.svg")
+    h1 Template
+    img(src="/images/loading-spin-balck.svg")
+
+//- block playlist
+    div.b-main__item
+        img(src='/images/video.jpg').b-main__item-image
+        div.b-main__item-desc
+            h2.item-desc__title 2016 Thailand WFSC Senior Men Classic Slalom 1st, Sergey Timchenko
+            span.item-desc__author Kamol Yawichai
+            br
+            span.item-desc__viewsCount 1 455 просмотров
+
+
+mixin playlist(src, title, author, viewsCount)
+  div.b-main__item
+        img(src=src).b-main__item-image
+        div.b-main__item-desc
+            h2.item-desc__title=title
+            span.item-desc__author=author
+            br
+            span.item-desc__viewsCount=viewsCount
